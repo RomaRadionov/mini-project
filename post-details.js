@@ -1,7 +1,6 @@
 let urlUserInfo = new URL(location.href);
 let json = urlUserInfo.searchParams.get('data');
 let userPost = JSON.parse(json);
-// console.log(userPost);
 
 const blockOfPost = document.querySelector('.content');
 let urlGetComments = new URL(`https://jsonplaceholder.typicode.com/posts/${userPost}/comments`);
