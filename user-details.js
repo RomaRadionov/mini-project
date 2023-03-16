@@ -23,16 +23,16 @@ const catchPhrase = document.querySelector('.catchPhrase').innerText = `catchPhr
 const bs = document.querySelector('.bs').innerText = `bs: ${user.company.bs}`;
 
 
+// Воно працює але з косяком в об'єкта user є два поля з назвою name, і воно заміняє ім'я користувача на ім'я компанії
 // const setText = (selector, text) => {
 //     document.querySelector(selector).innerText = text;
 // };
 //
-// const loopProperties = (obj, prefix = '') => {
+// const loopProperties = (obj) => {
 //     for (const property in obj) {
 //         if (obj.hasOwnProperty(property)) {
 //             const value = obj[property];
 //             const propertySelector = `.${property}`;
-//             // console.log(propertySelector)
 //
 //             if (typeof value === 'object') {
 //                 loopProperties(value, propertySelector);
@@ -46,37 +46,12 @@ const bs = document.querySelector('.bs').innerText = `bs: ${user.company.bs}`;
 // loopProperties(user);
 
 
-// const loopProperties = (obj, prefix = '') => {
-//     for (const property in obj) {
-//         if (obj.hasOwnProperty(property)) {
-//             const value = obj[property];
-//             const propertySelector = `${prefix}.${property}`;
-//
-//             if (typeof value === 'object') {
-//                 loopProperties(value, propertySelector);
-//             } else {
-//                 const existingValues = existingValues[property];
-//                 if (existingValues) {
-//                     existingValues.push(value);
-//                     setText(propertySelector, `${property}: ${existingValues.join(', ')}`);
-//                 } else {
-//                     existingValues[property] = [value];
-//                     setText(propertySelector, `${property}: ${value}`);
-//                 }
-//             }
-//         }
-//     }
-// };
-//
-// const existingValues = {};
-// loopProperties(user);
-
-
 // Написана нижче функція:
 // 1. Проходиться по ключах об'єкта і створює div з назвою ключа
 // 2. Якщо ключ є об'єктом тоді функція запускає сама себе(рекурсія) і повторяє перший пункт
 // 3. Якщо ключ вже існує створюється змінна count яка дорівнює 1, і додається до ключа window[key + count]
 // 4. Все додається(append) в блок
+// let count = 1;
 // function createElem(obj) {
 //     for (const key in obj) {
 //         if (typeof obj[key] !== 'object') {
@@ -96,10 +71,8 @@ const bs = document.querySelector('.bs').innerText = `bs: ${user.company.bs}`;
 //             createElem(obj[key]);
 //         }
 //     }
+//
 // }
-
-// let count = 1;
-const blockOfPost = document.querySelector('.blockOfPost');
 // function createElem(obj) {
 //     for (const key in obj) {
 //         if (typeof obj[key] !== 'object') {
@@ -124,6 +97,8 @@ const blockOfPost = document.querySelector('.blockOfPost');
 // const idNum = parseInt(id.textContent.split(':')[1].trim());
 // console.log(idNum);
 //
+
+const blockOfPost = document.querySelector('.blockOfPost');
 
 function createElem(item) {
     const btnShowComment = document.createElement('a');
@@ -152,10 +127,6 @@ function showPostsTitle() {
                 createElem(item);
             }
         })
-}
-
-function showPostDetail() {
-
 }
 
 btnPost.addEventListener('click', showPostsTitle);
