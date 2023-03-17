@@ -13,7 +13,6 @@ fetch(urlGetComments)
             }
         }
     })
-
 function createElem(obj) {
     const blockTitle = document.createElement('div');
     blockTitle.classList.add('flex');

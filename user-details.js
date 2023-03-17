@@ -1,7 +1,6 @@
 let urlUserInfo = new URL(location.href);
 let json = urlUserInfo.searchParams.get('data');
 let user = JSON.parse(json);
-console.log(user);
 
 const btnPost = document.querySelector('.btnPost');
 const id = document.querySelector('.id').innerText = `id: ${user.id}`;
@@ -96,7 +95,6 @@ const bs = document.querySelector('.bs').innerText = `bs: ${user.company.bs}`;
 // const id = document.querySelector('.id');
 // const idNum = parseInt(id.textContent.split(':')[1].trim());
 // console.log(idNum);
-//
 
 const blockOfPost = document.querySelector('.blockOfPost');
 
